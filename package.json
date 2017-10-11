@@ -1,6 +1,6 @@
 {
   "name": "generator-tinyspa",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate boilerplate for single page app using es6+ and scss",
   "files": [
     "generators"
