@@ -1,7 +1,7 @@
 {
   "name": "<%= name %>",
   "main": "index.js",
-  "author" "<%= author %>",
+  "author": "<%= author %>",
   "version": "1.0.0",
   "description": "simple spa",
   "scripts": {

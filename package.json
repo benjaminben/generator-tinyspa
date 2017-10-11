@@ -1,13 +1,7 @@
 {
   "name": "generator-tinyspa",
   "version": "0.0.0",
-  "description": "Boilerplate for single page app using es6+ and scss",
-  "homepage": "",
-  "author": {
-    "name": "Ben Benjamin",
-    "email": "benmbenjamin@gmail.com",
-    "url": ""
-  },
+  "description": "Generate boilerplate for single page app using es6+ and scss",
   "files": [
     "generators"
   ],
@@ -35,7 +29,7 @@
     "jest-cli": "^21.0.0"
   },
   "dependencies": {
-    "yeoman-generator": "^1.0.0",
+    "yeoman-generator": "^1.1.1",
     "chalk": "^1.1.3",
     "yosay": "^2.0.0"
   },
@@ -80,6 +74,8 @@
       "prettier"
     ]
   },
-  "repository": "benjaminben/generator-tinyspa",
-  "license": "Apache-2.0"
+  "author": "Ben Benjamin",
+  "homepage": "https://github.com/benjaminben/generator-tinyspa#readme",
+  "license": "MIT",
+  "repository": "benjaminben/generator-tinyspa"
 }

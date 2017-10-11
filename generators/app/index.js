@@ -2,10 +2,6 @@ var Generator = require('yeoman-generator');
 
 module.exports = class extends Generator {
 
-  constructor() {
-    console.log(this)
-  }
-
   prompting() {
     return this.prompt([{
       type: 'input',
@@ -17,35 +13,29 @@ module.exports = class extends Generator {
       name: 'author',
       message: 'Project author',
       default: 'Gary Oak'
-    }], (answers) => {
+    }]).then(answers => {
       this.props = answers
     })
   }
 
   writing() {
     const { props } = this
-    // console.log("this: ", this)
 
     this.fs.copy(
       this.templatePath('**/!(*.tpl)'),
       this.destinationPath()
-    )
+    );
 
     this.fs.copy(
       this.templatePath('gitignore.tpl'),
       this.destinationPath('.gitignore')
-    )
-
-    this.fs.copyTpl(
-      this.templatePath('src/js/app.js.tpl'),
-      this.destinationPath('src/js/app.js'),
-      props
-    )
+    );
 
     [
       'README.md.tpl',
       'package.json.tpl',
-      'dist/index.html.tpl'
+      'dist/index.html.tpl',
+      'src/js/app.js.tpl'
     ].forEach((path) => {
       this.fs.copyTpl(
         this.templatePath(path),
