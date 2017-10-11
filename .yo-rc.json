@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Ben Benjamin",
+      "authorEmail": "benmbenjamin@gmail.com",
+      "authorUrl": ""
+    }
+  }
+}
