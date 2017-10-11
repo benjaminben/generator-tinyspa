@@ -5,8 +5,7 @@
   "version": "1.0.0",
   "description": "simple spa",
   "scripts": {
-    "watch": "webpack --watch",
-    "serve": "serve dist",
+    "start": "webpack --watch & serve dist",
     "deploy": "git subtree push --prefix dist origin gh-pages"
   }
 }
