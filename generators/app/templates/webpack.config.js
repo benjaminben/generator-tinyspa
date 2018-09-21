@@ -1,5 +1,5 @@
 const path = require('path')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   entry: ['babel-polyfill', './src', './src/index.scss'],
@@ -17,21 +17,44 @@ module.exports = {
           {
             loader: 'babel-loader',
             options: {
-              presets: ['es2015']
+              presets: ['@babel/preset-env']
             }
           }
         ]
       },
       {
-        test: /\.scss/,
-        loader: ExtractTextPlugin.extract(['css-loader?url=false', 'postcss-loader', 'sass-loader'])
+        test: /\.(css|sass|scss)$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 2,
+              sourceMap: true
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: () => [
+                require('autoprefixer')
+              ],
+              sourceMap: true
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true
+            }
+          }
+        ]
       }
     ]
   },
   plugins: [
-    new ExtractTextPlugin({
+    new MiniCssExtractPlugin({
       filename: 'style.css',
-      allChunks: true,
     })
   ]
 }

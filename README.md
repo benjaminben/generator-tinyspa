@@ -13,6 +13,7 @@ npm install -g generator-tinyspa
 Then generate your new project:
 
 ```bash
+mkdir <PROJECT NAME> && cd <PROJECT NAME>
 yo tinyspa
 ```
 
