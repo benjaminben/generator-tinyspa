@@ -6,6 +6,7 @@
   "description": "simple spa",
   "scripts": {
     "start": "webpack --watch & serve dist",
-    "deploy": "git subtree push --prefix dist origin gh-pages"
+    "build": "webpack -e PROD",
+    "deploy": "yarn build && git subtree push --prefix dist origin gh-pages"
   }
 }

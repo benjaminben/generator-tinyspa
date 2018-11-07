@@ -1,4 +1,5 @@
 const path = require('path')
+const args = require("minimist")(process.argv.slice(2))
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
@@ -52,6 +53,7 @@ module.exports = {
       }
     ]
   },
+  mode: args.e === "PROD" ? "production" : "development",
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'style.css',

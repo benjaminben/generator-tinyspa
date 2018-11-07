@@ -58,7 +58,8 @@ module.exports = class extends Generator {
         'style-loader',
         'webpack',
         'webpack-cli',
-        'webpack-dev-server'
+        'webpack-dev-server',
+        'minimist'
       ],
       { 'save-dev': true }
     );
